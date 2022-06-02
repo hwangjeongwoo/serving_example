@@ -6,19 +6,7 @@ import os, sys, re
 def handler(data):
 
     print(os.getcwd())
-    try:
-        root_dir = "/mm/project"
-        for (root, dirs, files) in os.walk(root_dir):
-            print("# root : " + root)
-            if len(dirs) > 0:
-                for dir_name in dirs:
-                    print("dir: " + dir_name)
-
-            if len(files) > 0:
-                for file_name in files:
-                    print("file: " + file_name)
-    except PermissionError:
-        pass
+    os.system("ls /mm/project -al")
 
     model_name = 'boston-housing'
     os.chdir('/home/splunk/project/model')
@@ -26,7 +14,7 @@ def handler(data):
 
     event_body = data
     print(event_body)
-
+    os.system("ls /home/splunk/project -al")
     rows = 1
     values_list = [[float(v) for v in event_body.values()] for i in range(rows)]
 
