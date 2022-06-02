@@ -5,6 +5,21 @@ import os, sys, re
 
 def handler(data):
 
+    print(os.getcwd())
+    try:
+        root_dir = "/mm/project"
+        for (root, dirs, files) in os.walk(root_dir):
+            print("# root : " + root)
+            if len(dirs) > 0:
+                for dir_name in dirs:
+                    print("dir: " + dir_name)
+
+            if len(files) > 0:
+                for file_name in files:
+                    print("file: " + file_name)
+    except PermissionError:
+        pass
+
     model_name = 'boston-housing'
     os.chdir('/home/splunk/project/model')
     current_path = os.getcwd()
