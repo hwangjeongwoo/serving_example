@@ -8,10 +8,6 @@ def handler(data):
     print("[start] : " + os.getcwd())
     os.system("ls /mm/project -al")
 
-    model_name = 'boston-housing'
-    os.chdir('/mm/project/model')
-    current_path = os.getcwd()
-
     try:
         root_dir = "/mm/project"
         for (root, dirs, files) in os.walk(root_dir):
@@ -25,6 +21,9 @@ def handler(data):
                     print("file: " + file_name)
     except PermissionError:
         pass
+    model_name = 'boston-housing'
+    os.chdir('/mm/project/model')
+    current_path = os.getcwd()
 
     event_body = data
     print(event_body)
