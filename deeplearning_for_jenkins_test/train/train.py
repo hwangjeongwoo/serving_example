@@ -51,7 +51,7 @@ model.add(Dense(1))
 model.compile(loss='mean_squared_error',
               optimizer='adam')
 
-model.fit(X_train, Y_train, epochs=10000, batch_size=10)
+model.fit(X_train, Y_train, epochs=5000, batch_size=10)
 
 # test set에 대한 모델 평가
 Y_prediction = model.predict(X_test)
