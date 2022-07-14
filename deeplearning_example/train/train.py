@@ -11,7 +11,7 @@ import os, sys
 
 home = os.environ['project_home']
 workflow_history_path = os.environ['workflow_history_path']
-step = 'models'
+step = os.environ['step_type']
 target_path = os.environ['target_path']
 seq = os.environ.get('seq', '0')
 
